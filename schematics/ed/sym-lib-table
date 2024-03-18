@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "easy_stepper_driver")(type "Legacy")(uri "/home/mircho/dev/stepper/schematics/kicad-easydriver/easy_stepper_driver.lib")(options "")(descr ""))
+)

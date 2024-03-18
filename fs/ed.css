@@ -1,0 +1,12 @@
+.motor-status-dir-back #ed\.directionfwd,
+.motor-status-dir-fwd #ed\.directionback
+ {
+    --pico-color: var(--pico-secondary-inverse);
+    --pico-background-color: var(--pico-secondary-background);
+}
+
+.motor-status-dir-fwd #ed\.directionfwd,
+.motor-status-dir-back #ed\.directionback {
+    --pico-color: var(--pico-primary-inverse);
+    --pico-background-color: var(--pico-primary-background);
+}

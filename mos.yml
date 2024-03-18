@@ -1,0 +1,50 @@
+author: mongoose-os
+description: Stepper Motor control firmware with web control
+arch: esp32
+version: 2.0
+manifest_version: 2017-05-18
+libs_version: latest
+modules_version: latest
+mongoose_os_version: latest
+tags:
+  - c
+  - http
+  - pwm
+  - EasyDriver
+sources:
+  - src
+config_schema:
+  - ["wifi.sta.enable", true]
+  - ["wifi.sta.ssid", "iotE"] # WIFI1SSID
+  - ["wifi.sta.pass", "delirium"] # WIFI1PASS
+  - ["wifi.sta.dhcp_hostname", "button_test_jig"] # DEVICE_ID
+  - ["wifi.sta1.enable", true]
+  - ["wifi.sta1.ssid", "linux-bg.org"] # WIFI2SSID
+  - ["wifi.sta1.pass", "atlanta2"] # WIFI2PASS
+  - ["wifi.sta1.dhcp_hostname", "button_test_jig"] # DEVICE_ID
+  - ["wifi.ap.enable", true]
+  - ["wifi.ap.ssid", "button_test_jig"] # APSSID
+  - ["wifi.ap.pass", "12345678"] # APPASS
+  - ["easydriver.enable_pin", "i", 25, {title: "ED enable pin, active low"}]
+  - ["easydriver.dir_pin", "i", 33, {title: "ED direction pin"}]
+  - ["easydriver.step_pin", "i", 14, {title: "ED step pin, step on rising edge"}]
+  - ["easydriver.ms1_pin", "i", 26, {title: "ED MS1 pin, microstep control"}]
+  - ["easydriver.ms2_pin", "i", 27, {title: "ED MS2 pin, microstep control"}]
+  - ["easydriver.freq", "i", 20, {title: "ED frequency"}]
+  - ["sntp.server", "s", "time.cloudflare.com", {title: "Server address"}]
+filesystem:
+  - fs
+libs:
+libs:
+  - origin: https://github.com/mongoose-os-libs/pwm
+  - origin: https://github.com/mongoose-os-libs/dns-sd
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/rpc-ws
+  - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+  - origin: lib/easydriver

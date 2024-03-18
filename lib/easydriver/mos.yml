@@ -1,0 +1,22 @@
+author: Mircho Mirev <mircho.mirev@gmail.com>
+type: lib
+description: EasyDriver stepper motor control library
+version: 1.0
+
+platforms: [ esp32 ]
+
+sources:
+  - src
+
+includes:
+  - include
+
+config_schema:
+  - ["easydriver", "o", {title: "EasyDriver settings"}]
+  - ["easydriver.enable_pin", "i", -1, {title: "ED enable pin, active low"}]
+  - ["easydriver.dir_pin", "i", -1, {title: "ED direction pin"}]
+  - ["easydriver.step_pin", "i", -1, {title: "ED step pin, step on rising edge"}]
+  - ["easydriver.ms1_pin", "i", -1, {title: "ED MS1 pin, microstep control"}]
+  - ["easydriver.ms2_pin", "i", -1, {title: "ED MS2 pin, microstep control"}]
+
+manifest_version: 2017-09-29

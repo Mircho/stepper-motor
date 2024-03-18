@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="pico.min.css">
+    <link rel="stylesheet" href="ed.css">
+    <title>Motor Controller</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <hgroup>
+            <h1>Test Jig</h1>
+            <p>Stepper motor control</p>
+        </hgroup>
+    </header>
+    <!-- ./ Header -->
+
+    <!-- Main -->
+    <main class="container">
+        <!-- Buttons-->
+        <section id="controls">
+            <h3>Control</h3>
+            <div role="group" class="motor-status-moving">
+                <button id="ed.start" formaction="motor.start">Move</button>
+                <button id="ed.stop" formaction="motor.stop" class="secondary">Stop</button>
+            </div>
+            <div role="group" class="motor-status-enabled">
+                <button id="ed.enable" formaction="motor.enable" class="secondary">Enable</button>
+                <button id="ed.disable" formaction="motor.disable" class="secondary">Disable</button>
+            </div>
+            <div role="group">
+                <input type="number" id="ed.steps" name="steps" placeholder="120" aria-label="Steps" required />
+                <button id="ed.step" type="submit">Step</button>
+            </div>
+        </section>
+        <!-- ./ Buttons -->
+
+        <!-- Preview -->
+        <section id="setup">
+            <h2>Config</h2>
+            <fieldset>
+                <div role="group" class="motor-status-dir-fwd">
+                    <button id="ed.directionback" formaction="motor.directionback">⇠ Back</button>
+                    <button id="ed.directionfwd" formaction="motor.directionfwd">Forward ⇢</button>
+                </div>
+                <!-- Range slider control -->
+                <label for="ed.freq">Frequency
+                    <input id="ed.freq" type="range" min="0" max="240" value="100" name="frequency" />
+                </label>
+            </fieldset>
+        </section>
+        <!-- ./ Preview -->
+    </main>
+
+    <script src="ed.js"></script>
+
+</body>
+
+</html>
